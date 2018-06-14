@@ -7,7 +7,7 @@ List<Recipe> categoryListGenerator(iCategory) {
 
 List<Recipe> recipes = [
   //Pesto Pastry
-  new Recipe(
+  const Recipe(
       "Pesto Pastry",
       'a simple recipe for a delicious savoury snack, perfect for parties. '
       'Puff pastry is smothered with pesto sauce.',
@@ -43,7 +43,7 @@ List<Recipe> recipes = [
       'assets/images/pesto_pastries.jpg'),
 
   //Pizza Sticks
-  new Recipe(
+  const Recipe(
       'Pizza Sticks',
       'Saves both money and prep time for these cheesy pizza sticks. '
       'Simply top a refrigerated thin pizza crust with bruschetta topping and a '
@@ -70,7 +70,7 @@ List<Recipe> recipes = [
       'assets/images/pizza_sticks.jpg'),
 
   //Sweet Corn Lasagna Rolls
-  new Recipe(
+  const Recipe(
       'Sweet Corn Lasagna Rolls',
       'Packed with veggies, corn and tons of cheese, '
       'this pasta dish is full of warm, savory goodness.',
@@ -127,7 +127,7 @@ List<Recipe> recipes = [
       'assets/images/sweet_corn_lasagna_rolls.jpg'),
 
   //Rajma
-  new Recipe(
+  const Recipe(
       'Rajma',
       'Simple South Indian dish with lots of wealthy health and taste.',
       Category.entrees,
@@ -178,7 +178,7 @@ List<Recipe> recipes = [
       'assets/images/rajma.jpg'),
 
   //Margarita Cupcakes
-  new Recipe(
+  const Recipe(
       'Margarita Cupcakes',
       'Cute Little eggless cakes to make your party going and tongues happy.',
       Category.desserts,
@@ -215,7 +215,7 @@ List<Recipe> recipes = [
       'assets/images/margarita_cupcake.jpg'),
 
   //Choco Chip Cookie
-  new Recipe(
+  const Recipe(
       'Choco Chip Cookie',
       'Just like the name says, this is the chocolate chip cookie extraordinaire!'
       'Definitely one of Betty\'s favorites!',
@@ -249,7 +249,7 @@ List<Recipe> recipes = [
       'assets/images/choco_chip_cookie.jpg'),
 
   //Giggle Juice
-  new Recipe(
+  const Recipe(
       'Giggle Juice',
       'When shared with your girlfriends, this bubbly mix of vodka,'
       'prosecco, and lemon lime soda will definitely make you smile.',
@@ -280,7 +280,7 @@ List<Recipe> recipes = [
       'assets/images/giggle_juice.png'),
 
   //Pina colada
-  new Recipe(
+  const Recipe(
       'Piña colada',
       'You\'re going to want to make extra of this one.',
       Category.cocktails,
@@ -309,15 +309,14 @@ List<Recipe> recipes = [
 enum Category { appetizers, entrees, desserts, cocktails }
 
 class Recipe {
+  final bool isGlutenFree, isEgless;
+  final int calories, fat, protien;
+  final List<String> ingredients;
+  final Map<int, String> recipe;
+  final String name, summary, imageURI;
+  final Category category;
 
-  bool isGlutenFree, isEgless;
-  int calories, fat, protien;
-  List<String> ingredients;
-  Map<int, String> recipe;
-  String name, summary, imageURI;
-  Category category;
-
-  Recipe(
+  const Recipe(
       this.name,
       this.summary,
       this.category,
